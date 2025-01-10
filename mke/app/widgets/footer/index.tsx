@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <PageLayer tag="footer" className="max-w-full flex flex-col justify-center items-center p-0  gap-4 h-[505px] xl:h-auto bg-[#0B175B] mt-10">
       <div className="flex justify-between flex-wrap gap-10 w-full max-w-[1500px]">
-        <div className="flex flex-col items-center justify-center px-10">
+        <div className="">
           <Logo className="btn btn-ghost" />
 
           <ListItem title="" links={Locations} />
@@ -73,11 +73,11 @@ const GetInvolved: LinkProps[] = [
 ];
 
 const Locations: LinkProps[] = [
-  { type: "location", country: "Germany", address: "Harmburg, <br /> XXXGFGG,", phone: "+1 7383-635-1574." },
+  { type: "location", country: "Germany", address: "Harmburg, XXXGFGG,", phone: "+1 7383-635-1574." },
   {
     type: "location",
     country: "Nigeria",
-    address: `10b NEPA Line, <br /> Ikot Ekpene, <br /> Akwa Ibom State,`,
+    address: `10b NEPA Line,Ikot Ekpene,Akwa Ibom State,`,
     phone: "+234-706-3390-988.",
   },
 ];
