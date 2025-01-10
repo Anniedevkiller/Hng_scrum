@@ -6,30 +6,32 @@ import spendenSiegel from "./images/spenden-siegel.png";
 import Logo from "../components/Logo";
 import Link from "next/link";
 import { AppRoutes } from "@/shared/utilities/routes";
+import PageLayer from "@/shared/components/PageLayer";
 
 const Header = () => {
   return (
-    <header className="navbar px-20 py-5 md:px-5 sticky top-0 z-10 bg-white-f9">
+    <PageLayer className="navbar py-5 px-20 sticky top-0 z-10 bg-white-f9 max-w-full justify-between items-center ">
       <MobileDropdown />
 
-      <div className="navbar-start w-fit">
+      <div className="w-fit">
         <Logo />
       </div>
 
-      <div className="shrink-0 ml-5 flex xl:hidden">
+      <div className="shrink-0 ml-5 xl:hidden">
         <NavItemList />
       </div>
 
-      <div className="navbar-end ml-auto w-auto sm:hidden">
-        <SearchAction />
-
-        <Link href={AppRoutes.Donate} className="btn btn-error text-white ml-10">
+      <div>
+        <Link href={AppRoutes.Donate} className="btn btn-error text-white bg-[#0B175B] border-none">
           Donate Now
         </Link>
-
-        {/* <Image src={spendenSiegel} alt="" height={50} /> */}
       </div>
-    </header>
+      {/* <div className="navbar-end ml-auto w-auto sm:hidden"> */}
+      {/* <SearchAction /> */}
+
+      {/* <Image src={spendenSiegel} alt="" height={50} /> */}
+      {/* </div> */}
+    </PageLayer>
   );
 };
 
