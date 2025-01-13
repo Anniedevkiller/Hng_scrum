@@ -3,7 +3,7 @@ import { NavItem } from "./NavItem";
 
 const NavItemList = () => {
   return (
-    <ul className="menu menu-horizontal px-1">
+    <ul className="flex gap-10">
       {NavList.map((item) => (
         <li key={item.name}>
           <NavItem {...item} />
