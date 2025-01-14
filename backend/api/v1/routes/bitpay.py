@@ -56,6 +56,8 @@ def donation_success(invoice_id: str = Query(..., alias="invoice_id")):
     """
     try:
         invoice = bitpay_service.get_invoice(invoice_id)
+
+        print(invoice.display_amount_paid)
         return success_response(
             status_code=status.HTTP_200_OK,
             message="Invoice retrieved successfully",
