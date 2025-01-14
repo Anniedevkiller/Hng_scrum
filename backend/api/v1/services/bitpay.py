@@ -17,8 +17,16 @@ class BitpayService:
             Environment.TEST if settings.ENV == "dev" else Environment.PROD
         )
 
-    def create_invoice(self, data: CreateInvoice, currency: str):
-        """Create a donation invoice"""
+    def create_invoice(self, data: CreateInvoice, currency: str) -> Invoice:
+        """
+        Create a donation invoice
+
+        Args:
+            data (CreateInvoice): The request body
+            currency (str): The currency code
+        Returns:
+            Invoice (Invoice): The invoice object
+        """
         invoice = Invoice()
         invoice.token = settings.BITPAY_API_TOKEN
         invoice.price = data.amount
@@ -31,5 +39,16 @@ class BitpayService:
 
         invoice.buyer = buyer
         return self.client.create_invoice(invoice, Facade.POS, False)
+
+    def get_invoice(self, invoice_id: str) -> Invoice:
+        """
+        Get an invoice by ID
+
+        Args:
+            invoice_id (str): The invoice ID
+        Returns:
+            Invoice (Invoice): The invoice object
+        """
+        return self.client.get_invoice(invoice_id, Facade.POS, False)
 
 bitpay_service = BitpayService()

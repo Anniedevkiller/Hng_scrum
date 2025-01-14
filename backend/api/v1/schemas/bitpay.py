@@ -14,3 +14,7 @@ class CreateInvoice(BaseModel):
 class CreateInvoiceResponse(ResponseBase):
     """Create payment response model"""
     data: str
+
+class RetrieveInvoiceResponse(ResponseBase):
+    """Retrieve payment response model"""
+    data: dict
