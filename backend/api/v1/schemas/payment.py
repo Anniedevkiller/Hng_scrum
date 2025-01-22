@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from decimal import Decimal
 from datetime import datetime
 from enum import Enum
@@ -28,3 +28,9 @@ class Payment(BaseModel):
     project: str # Project
     project_title: str # Title
     
+
+class ProjectPaymentsResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    total_amount: Decimal
+    payments: list[Payment]
