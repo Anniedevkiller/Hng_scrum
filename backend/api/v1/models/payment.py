@@ -10,7 +10,7 @@ from sqlalchemy import (
 
 
 class Payment(BaseTableModel):
-    
+
     """
     Represents a payment record in the system.
 
@@ -23,6 +23,7 @@ class Payment(BaseTableModel):
         payment_type (PaymentMethodEnum): The type of payment method used.
         currency (str): The currency in which the payment was made.
         created_at (datetime.datetime): The timestamp when the payment was created.
+        project (str): The project for which the payment was made.
     """
 
     __tablename__ = "payments"
@@ -34,3 +35,4 @@ class Payment(BaseTableModel):
     payment_type = Column(Enum(PaymentMethodEnum), nullable=False)
     currency = Column(String, nullable=False)
     created_at = Column(DateTime, nullable=False)
+    project = Column(String, nullable=False)
