@@ -1,5 +1,5 @@
 from ..schemas.payment import GateWayEnum, PaymentMethodEnum
-from base_model import BaseTableModel
+from .base_model import BaseTableModel
 from sqlalchemy import (
     Column, 
     DECIMAL, 

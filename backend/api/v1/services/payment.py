@@ -67,7 +67,7 @@ class PaymentService:
         Get all payments for a specific supported project.
         """
         try:
-            return db.query(Payment).filter(Payment.supported_project == project_id).all()
+            return db.query(Payment).filter(Payment.project == project_id).all()
         
         except SQLAlchemyError:
             db.rollback()
