@@ -2,10 +2,10 @@ import pytest
 from fastapi.testclient import TestClient
 from unittest.mock import patch
 from main import app
-import uuid
+import uuid_extensions
 
 
-PAYMENT_ID = str(uuid.uuid4())
+PAYMENT_ID = str(uuid_extensions.uuid7())
 
 @pytest.fixture()
 def client():
