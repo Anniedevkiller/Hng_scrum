@@ -2,7 +2,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Oswald, Roboto, Montserrat } from "next/font/google";
+import { Oswald } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "./widgets/header";
@@ -14,18 +14,8 @@ const oswald = Oswald({
   variable: "--font-oswald",
 });
 
-const roboto_init = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"]
-});
 
-const montserrat_init = Montserrat({
-  subsets:["latin"],
-  weight: ["400", "600", "700"]
-}) 
 
-export const montserrat = montserrat_init.className;
-export const roboto = roboto_init.className;
 
 export const metadata: Metadata = {
   title: "Monikaverein",
