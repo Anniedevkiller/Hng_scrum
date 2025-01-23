@@ -1,0 +1,72 @@
+name: Deploy mke App
+
+on:
+  push:
+    branches:
+      - main 
+      - dev 
+      - staging
+    paths:
+      - frontend/**
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_REGION: us-east-1
+      BUILD_DIR: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React app
+        run: npm run build
+
+      - name: Deploy to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+            BUCKET_NAME= $BUCKET_NAME
+          elif [ "${{ github.ref }}" == "refs/heads/staging" ]; then
+            BUCKET_NAME= $BUCKET_NAME
+          elif [ "${{ github.ref }}" == "refs/heads/dev" ]; then
+            BUCKET_NAME=" $BUCKET_NAME
+          else
+            echo "Branch not configured for deployment."
+            exit 1
+          fi
+
+          echo "Deploying to S3 bucket: $BUCKET_NAME"
+          aws s3 sync $BUILD_DIR s3://$BUCKET_NAME --delete
+
+
+      - name: Invalidate CloudFront cache
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+            DISTRIBUTION_ID= $DISTRIBUTION_ID
+          elif [ "${{ github.ref }}" == "refs/heads/staging" ]; then
+            DISTRIBUTION_ID= $DISTRIBUTION_ID
+          elif [ "${{ github.ref }}" == "refs/heads/dev" ]; then
+            DISTRIBUTION_ID= $DISTRIBUTION_ID
+          else
+            echo "Branch not configured for deployment."
+            exit 1
+          fi
+
+          echo "Invalidating CloudFront distribution: $DISTRIBUTION_ID"
+          aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
