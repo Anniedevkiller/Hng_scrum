@@ -1,7 +1,13 @@
 name: Deploy mke App
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main 
+      - dev 
+      - staging
+    paths:
+      - frontend/**
     
 jobs:
   deploy:
