@@ -95,14 +95,18 @@ const config: Config = {
         // => @media (max-width: 360px) { ... }
 
         // Min Breakpoints
-        xl_up: "1280px",
-        // => @media (min-width: 1280px) { ... }
 
-        lg_up: "1025px",
+        sm_up: "601px",
 
         md_up: "801px",
 
-        sm_up: "601px",
+        lg_up: "1025px",
+
+        xl_up: "1280px",
+        // => @media (min-width: 1280px) { ... }
+
+        "2xl_up": "1536px",
+
       },
       fontFamily: {
         title: ["var(--font-oswald)"],

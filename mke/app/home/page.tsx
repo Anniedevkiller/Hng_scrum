@@ -4,20 +4,29 @@ import Philosophy from "./components/Philosophy";
 import SupportProject from "./components/SupportProject";
 import ContactInfo from "@/shared/components/ContactInfo";
 import Waitlist from "@/shared/components/Waitlist";
-import PageHero from "@/shared/components/PageHero";
+import PageHero from "./components/PageHero";
 import WorkInAfrica from "@/shared/components/WorkInAfrica";
+import Welcome from "./components/Welcome";
+import OurWork from "./components/OurWork";
+import OurPhilosophy from "./OurPhilosophy";
+import Support from "./Support";
 
 const Page = () => {
   return (
     <main className="flex flex-col gap-20">
-      <PageHero />
+      {/* <PageHero />
       <SupportProject />
       <MakeDonation />
       <Philosophy />
       <WorkTogether />
       <WorkInAfrica />
       <ContactInfo />
-      <Waitlist />
+      <Waitlist /> */}
+      <PageHero/>
+      <Welcome/>
+      <OurWork/>
+      <OurPhilosophy/>
+      <Support/>
     </main>
   );
 };
