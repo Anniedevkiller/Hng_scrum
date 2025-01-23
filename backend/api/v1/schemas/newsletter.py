@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 class NewsletterSchema(BaseModel):
-    email: str
+    email: str = Field(pattern=r"[^@]+@[^@]+\.[^@]+")
