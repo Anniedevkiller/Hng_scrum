@@ -18,6 +18,6 @@ class VolunteerSchema(BaseModel):
 
     @field_validator("phone_no", mode="after")
     def validate_phoneno(cls, value):
-        if len(value) < 12:
+        if not re.match(r"^(?:\d{11}|\+234\d{10})$", value):
             raise ValueError("Invalid phone no")
         return value

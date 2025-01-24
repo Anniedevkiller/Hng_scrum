@@ -13,7 +13,7 @@ credentials = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE, scopes=SCOPES
 )
 
-SPREADSHEET_ID = settings.SPREADSHEET_ID
+VOLUNTEER_SPREADSHEET_ID = settings.VOLUNTEER_SPREADSHEET_ID
 
 
 class VolunteerService:
@@ -33,7 +33,7 @@ class VolunteerService:
             ]
 
             sheet.values().append(
-                spreadsheetId=SPREADSHEET_ID,
+                spreadsheetId=VOLUNTEER_SPREADSHEET_ID,
                 range="Sheet1!A1",
                 valueInputOption="USER_ENTERED",
                 body={"values": write_values},
