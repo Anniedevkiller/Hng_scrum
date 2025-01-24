@@ -45,4 +45,39 @@ body {
   font-size: 16px;
 }
 
+.home-hero{
+  background-image: linear-gradient(rgba(255,255,255, 0), rgba(255, 255, 255, 0.5)), url("../public/images/home/herosection.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: color;
+}
+
+
+.banner{
+  background-color: white;
+}
+
+.home-arrow::after{
+  content: "→";
+  position: relative;
+  bottom: 1px;
+  margin-left: 5px
+}
+
+.gradient-home{
+  background: linear-gradient(rgba(11, 23, 91, 0.6), rgba(11, 23, 91, 0.5)), radial-gradient(
+    rgba(133, 168, 255, 0), 
+    rgba(225, 144, 144, 0.17), 
+    rgba(120, 152, 244, 0.22),
+    rgba(164, 139, 189, 0.35),
+    rgba(198, 128, 146, 0.47),
+    rgba(183, 120, 147, 0.38),
+    rgba(165, 109, 149, 0.4),
+    rgba(105, 74, 153, 0.29),
+    rgba(50, 42, 157, 0.42),
+    rgba(16, 22, 159, 0.52)
+    
+    );
+}
+
 /* @media (prefers-color-scheme: dark) {} */
