@@ -1,12 +1,13 @@
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, field_validator, Field
+from typing import Literal
 import re
 
 class VolunteerSchema(BaseModel):
     name: str
     address: str
-    phone_no: str
+    phone_no: str = Field(min_length=9, max_length=14)
     email: str
-    gender: str = "Male" | "Female"
+    gender: Literal["Male", "Female"]
     area_of_interest: str
 
     @field_validator("email", mode="after")
@@ -14,10 +15,4 @@ class VolunteerSchema(BaseModel):
         if not re.match(r"[^@]+@[^@]+\.[^@]+", value):
             raise ValueError("Invalid email address")
         return value
-    
 
-    @field_validator("phone_no", mode="after")
-    def validate_phoneno(cls, value):
-        if not re.match(r"^(?:\d{11}|\+234\d{10})$", value):
-            raise ValueError("Invalid phone no")
-        return value

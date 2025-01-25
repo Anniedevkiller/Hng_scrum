@@ -29,7 +29,7 @@ class VolunteerService:
             # Call the Sheets API
             sheet = service.spreadsheets()
             write_values = [
-                [name, address, phone_no, email, gender, area_of_interests]
+                [name, address, '\''+phone_no, email, gender, area_of_interests]
             ]
 
             sheet.values().append(
