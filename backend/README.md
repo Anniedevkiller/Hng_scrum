@@ -1,4 +1,4 @@
-![Monika Verein](assets\logo.svg)
+![Monika Verein](assets/logo.svg)
 
 # Monika Verein
 
@@ -50,6 +50,78 @@ or run
 ```
 fastapi dev
 ```
+
+#### Testing the Application
+
+Set the Python Path for Tests
+Export the PYTHONPATH variable to include your project directory.
+
+On Windows (Command Prompt):
+
+```
+set PYTHONPATH=C:\Users\<YourUsername>\Documents\Projects\Hng_scrum\backend
+```
+
+On Windows (PowerShell):
+
+```
+$env:PYTHONPATH="C:\Users\<YourUsername>\Documents\Projects\Hng_scrum\backend"
+```
+
+### Run Tests with Pytest
+
+Navigate to the root directory of the project:
+
+```
+cd C:\Users\<YourUsername>\Documents\Projects\Hng_scrum\backend
+```
+
+Run the following command to execute all test cases:
+
+```
+    pytest
+```
+
+### Running a Specific Test File
+
+To run tests in a specific file, use:
+
+```
+pytest tests/path/to/test_file.py
+```
+
+For example:
+
+```
+pytest tests/v1/stripe/test_stripe.py
+```
+
+### Viewing Detailed Test Logs
+
+To view detailed test output, use the -v (verbose) flag:
+
+```
+pytest -v
+```
+
+Debugging Test Failures
+
+To debug test failures, use the --pdb flag to enable an interactive debugger:
+
+```
+pytest --pdb
+```
+
+### Generating a Coverage Report
+
+To ensure your tests cover the codebase effectively, you can install pytest-cov and run:
+
+```
+pip install pytest-cov
+pytest --cov=backend
+```
+
+This will generate a test coverage report for your application.
 
 ### Access the API
 

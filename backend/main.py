@@ -14,9 +14,9 @@ origins = [
 ]
 
 
-def create_tables():         
+def create_tables():
 	Base.metadata.create_all(bind=engine)
-        
+
 
 
 
@@ -38,6 +38,6 @@ app.add_middleware(
 def home():
     return success_response(
 		status_code=status.HTTP_200_OK,
-		message=f"Hey There👋. Welcome to HNF SCRUM.",
+		message=f"Hey There👋. Welcome to HNG SCRUM.",
     )
 

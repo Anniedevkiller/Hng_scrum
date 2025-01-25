@@ -1,5 +1,22 @@
-stripe_secret_key=
-stripe_publishable_key=
+#ENVIRONMENT 
+
+ENVIRONMENT=development
+
+# stripe
+STRIPE_SECRET_KEY=
+STRIPE_PUBLISHABLE_KEY=
+STRIPE_WEBHOOK_SECRET=
+STRIPE_SUCCESS_URL=http://localhost:8000/api/v1/stripe/success?session_id={CHECKOUT_SESSION_ID}
+STRIPE_CANCEL_URL=http://localhost:8000/api/v1/stripe/cancel
+
+
+# flutterwave
+FLUTTERWAVE_PUBLIC_KEY=
+FLUTTERWAVE_SECRET_KEY=
+FLUTTERWAVE_ENCRYPTION_KEY=
+FLUTTERWAVE_URL=https://api.flutterwave.com/v3
+FLUTTERWAVE_SUCCESS_URL=http://localhost:8000/api/v1/flutterwave/success
+
 
 # development OR production
 DB_USER=
@@ -11,3 +28,13 @@ DB_URL=postgresql://username:password@localhost:5432/test
 
 # 'sqlite' or 'postgresql' for development and 'postgresql' for production
 DB_TYPE=sqlite
+
+TEST_MODE_ACTIVE=True
+
+# Bitpay configuration
+BITPAY_API_TOKEN=
+NOTIFICATION_URL=
+NOTIFICATION_EMAIL=
+
+# Google Sheets API configuration
+SPREADSHEET_ID=

@@ -1,1 +1,1 @@
-from api.v1.models.base_model import Base
+from api.v1.models.base_model import Base, BaseTableModel

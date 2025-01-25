@@ -1,0 +1,15 @@
+__pycache__/
+
+*.db
+.env
+# venv
+venv/
+
+.venv/
+__pycache__/
+*.pyc
+  
+*.db
+.env
+
+.pytest_cache/
