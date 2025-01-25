@@ -8,8 +8,10 @@ import PageHero from "./components/PageHero";
 import WorkInAfrica from "@/shared/components/WorkInAfrica";
 import Welcome from "./components/Welcome";
 import OurWork from "./components/OurWork";
-import OurPhilosophy from "./OurPhilosophy";
-import Support from "./Support";
+import OurPhilosophy from "./components/OurPhilosophy";
+import Support from "./components/Support";
+import JoinCTA from "./components/JoinCTA";
+import Newsletter from "./components/Newsletter";
 
 const Page = () => {
   return (
@@ -27,6 +29,8 @@ const Page = () => {
       <OurWork/>
       <OurPhilosophy/>
       <Support/>
+      <JoinCTA/>
+      <Newsletter/>
     </main>
   );
 };
