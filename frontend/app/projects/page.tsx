@@ -1,17 +1,23 @@
 import ContactInfo from "@/shared/components/ContactInfo";
-import Intro from "./components/Intro";
 import Waitlist from "@/shared/components/Waitlist";
-import Accomplished from "./components/Accomplished";
-import InProgress from "./components/InProgress";
+import Hero from "./components/Hero";
+import Intro from "./components/Intro";
+import DonationImpact from "./components/DonationImpact";
+import DonateCompany from "./components/DonateCompany";
+import OngoingProjects from "./components/OngoingProjects";
 
-export default function Page() {
+const Page = () => {
   return (
     <main className="flex flex-col gap-10">
+      <Hero />
       <Intro />
-      <Accomplished />
-      <InProgress />
+      <DonationImpact />
+      <DonateCompany />
+      <OngoingProjects />
       <ContactInfo className="my-10" />
       <Waitlist />
     </main>
   );
-}
+};
+
+export default Page;

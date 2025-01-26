@@ -1,21 +1,18 @@
-import PageLayer from "@/shared/components/PageLayer";
 import Text from "@/shared/components/Text";
+import PageLayer from "@/shared/components/PageLayer";
 
 const Intro = () => {
-  const text = `People's lives can be profoundly and drastically transformed as a result of donations given over time.  We can
-        support education and the underprivileged in Africa in a variety of ways by giving frequently and generously.
-        These joint contributions could accumulate over time to support significant initiatives, construct buildings,
-        provide resources, and generate ecologically friendly solutions.`;
-
   return (
-    <PageLayer className="flex flex-col justify-center mt-10">
-      <Text size="72" tag="h1" className="text-center">
-        Monika Kindergarten Förderverein Projects
+    <PageLayer className="flex flex-col justify-center items-center gap-4">
+      <Text size="42" tag="h2">
+        Building of a Special School Block for Inclusive Education
+      </Text>
+      <Text size="20" className="max-w-[895px] mx-auto">
+        We are currently expanding our school reach program to provide an opportunity for children with hearing challenges to have a proper inclusive
+        education, and an opportunity to a better living.
       </Text>
 
-      <Text size="20" tag="p" className="text-black mt-8 text-justify">
-        {text}
-      </Text>
+      <button className="btn btn-primary mt-4">Donate Now</button>
     </PageLayer>
   );
 };
