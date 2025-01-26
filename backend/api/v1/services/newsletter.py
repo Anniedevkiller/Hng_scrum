@@ -13,7 +13,7 @@ credentials = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE, scopes=SCOPES
 )
 
-SPREADSHEET_ID = settings.SPREADSHEET_ID
+NEWSLETTER_SPREADSHEET_ID = settings.NEWSLETTER_SPREADSHEET_ID
 
 
 class NewsletterSubscriptionService:
@@ -31,7 +31,7 @@ class NewsletterSubscriptionService:
             write_values = [[email]]
 
             sheet.values().append(
-                spreadsheetId=SPREADSHEET_ID,
+                spreadsheetId=NEWSLETTER_SPREADSHEET_ID,
                 range="Sheet1!A1",
                 valueInputOption="USER_ENTERED",
                 body={"values": write_values},
