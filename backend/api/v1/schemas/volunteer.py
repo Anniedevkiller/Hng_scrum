@@ -8,7 +8,7 @@ class VolunteerSchema(BaseModel):
     phone_no: str = Field(min_length=9, max_length=14)
     email: str
     gender: Literal["Male", "Female"]
-    area_of_interest: str
+    area_of_interest: Literal["Work", "Volunteering"]
 
     @field_validator("email", mode="after")
     def validate_email(cls, value):
