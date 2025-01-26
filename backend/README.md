@@ -125,6 +125,7 @@ This will generate a test coverage report for your application.
 
 ### Generating a Spreadsheet ID
 ![alt text](<spreadsheet.png>)
+Access the spreadsheet id as shown and add the value to the dotenv file.
 
 ### Access the API
 
