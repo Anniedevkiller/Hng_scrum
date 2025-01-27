@@ -14,6 +14,9 @@ const oswald = Oswald({
   variable: "--font-oswald",
 });
 
+
+
+
 export const metadata: Metadata = {
   title: "Monikaverein",
   description: "Monikaverein",

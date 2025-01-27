@@ -4,6 +4,7 @@ from api.v1.routes.stripe import stripe_donation
 from api.v1.routes.flutterwave import flutterwave_donation
 from api.v1.routes.bitpay import bitpay_donation
 from api.v1.routes.newsletter import newsletter
+from api.v1.routes.volunteer import volunteer
 
 api_version_one = APIRouter(prefix="/api/v1")
 
@@ -12,3 +13,4 @@ api_version_one.include_router(stripe_donation)
 api_version_one.include_router(flutterwave_donation)
 api_version_one.include_router(bitpay_donation)
 api_version_one.include_router(newsletter)
+api_version_one.include_router(volunteer)

@@ -10,12 +10,10 @@ on:
       - frontend/**
     
 jobs:
-  deploy:
+  setup-and-deploy:
     runs-on: ubuntu-latest
-
     env:
-      AWS_REGION: us-east-1
-      BUILD_DIR: build
+      BUILD_DIR: frontend/dist
 
     steps:
       - name: Checkout code
@@ -24,49 +22,83 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 22
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd frontend
+          npm install
 
       - name: Build React app
-        run: npm run build
+        run: |
+          cd frontend
+          npm run build
 
-      - name: Deploy to S3
+
+      - name: Set up AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ vars.AWS_REGION }}
+  
+      - name: Set Bucket Name based on Branch
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+            BUCKET_NAME=${{ vars.BUCKET_NAME }}
+          elif [ "${{ github.ref }}" == "refs/heads/staging" ]; then
+            BUCKET_NAME=${{ vars.BUCKET_NAME }}
+          elif [ "${{ github.ref }}" == "refs/heads/dev" ]; then
+            BUCKET_NAME=${{ vars.BUCKET_NAME }}
+          else
+            echo "Branch not configured for deployment."
+            exit 1
+          fi
+      
+      
+      - name: Deploy to s3
+        run: |
+          aws s3 sync ./frontend/dist/ s3://mke-verein.de/ --delete
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+       
+        
+
+
+  Invalidate-CloudFront-cache:
+    needs: setup-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Set up AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Set Distribution ID
         run: |
           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            BUCKET_NAME= $BUCKET_NAME
+            DISTRIBUTION_ID=${{ vars.DISTRIBUTION_ID }}
           elif [ "${{ github.ref }}" == "refs/heads/staging" ]; then
-            BUCKET_NAME= $BUCKET_NAME
+            DISTRIBUTION_ID=${{ vars.DISTRIBUTION_ID }}
           elif [ "${{ github.ref }}" == "refs/heads/dev" ]; then
-            BUCKET_NAME=" $BUCKET_NAME
+            DISTRIBUTION_ID=${{ vars.DISTRIBUTION_ID }}
           else
             echo "Branch not configured for deployment."
             exit 1
           fi
 
-          echo "Deploying to S3 bucket: $BUCKET_NAME"
-          aws s3 sync $BUILD_DIR s3://$BUCKET_NAME --delete
-
-
-      - name: Invalidate CloudFront cache
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+          --distribution-id ${{ vars.DISTRIBUTION_ID }} \
+          --paths "/*"
         env:
+          DISTRIBUTION: ${{ vars.DISTRIBUTION_ID }}
+          PATHS: "/*"
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: |
-          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            DISTRIBUTION_ID= $DISTRIBUTION_ID
-          elif [ "${{ github.ref }}" == "refs/heads/staging" ]; then
-            DISTRIBUTION_ID= $DISTRIBUTION_ID
-          elif [ "${{ github.ref }}" == "refs/heads/dev" ]; then
-            DISTRIBUTION_ID= $DISTRIBUTION_ID
-          else
-            echo "Branch not configured for deployment."
-            exit 1
-          fi
-
-          echo "Invalidating CloudFront distribution: $DISTRIBUTION_ID"
-          aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
