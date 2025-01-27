@@ -35,9 +35,12 @@ function PageTracker({page, setPage}:any){
 export default function PaymentCard() {
     const [page, setPage] = useState(1)
   return (
-    <div className={"rounded-2xl bg-[#F5F9FF99] backdrop-blur-[8px]  min-h-[400px] px-5 xl_up:px-[3%] xl_up:w-[50%] mr-[10%] max-w-[776px] py-10 text-center " + roboto}>
+    <div className={"rounded-2xl bg-[#F5F9FF99] backdrop-blur-[8px]  min-h-[400px] px-3 mx-3 xl:px-5 xl_up:px-[3%] xl_up:w-[50%] xl_up:mr-[10%] max-w-[776px] py-10 text-center " + roboto}>
         <PageTracker page={page} setPage={setPage}/>
-        <Page1 />
+        {
+            page === 1 ? <Page1 /> : <Page2 />
+        }
+           
     </div>
   )
 }
