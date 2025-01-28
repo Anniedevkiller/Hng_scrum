@@ -35,4 +35,7 @@ class Settings(BaseSettings):
     FLUTTERWAVE_URL : str = config("FLUTTERWAVE_URL")
     FLUTTERWAVE_SUCCESS_URL : str = config("FLUTTERWAVE_SUCCESS_URL")
 
+    NEWSLETTER_SPREADSHEET_ID : str = config("NEWSLETTER_SPREADSHEET_ID")
+    VOLUNTEER_SPREADSHEET_ID : str = config("VOLUNTEER_SPREADSHEET_ID")
+
 settings = Settings()

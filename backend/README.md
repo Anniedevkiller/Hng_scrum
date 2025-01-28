@@ -123,6 +123,10 @@ pytest --cov=backend
 
 This will generate a test coverage report for your application.
 
+### Generating a Spreadsheet ID
+![alt text](<spreadsheet.png>)
+Access the spreadsheet id as shown and add the value to the dotenv file.
+
 ### Access the API
 
 Open your web browser and navigate to `http://localhost:8000/docs` to access the interactive API documentation (Swagger UI).
