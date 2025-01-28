@@ -16,11 +16,45 @@ const lato_init = Lato({
 const montserrat = montserrat_init.className;
 const lato = lato_init.className; 
 
+
+const data = [
+    {
+        img:"/images/home/icons/book.png", 
+        title:"BUILD SCHOOLS",
+        paragraph:"Erfahren Sie mehr über unsere Projekte undFinanzen im Jahr 2021 in unserem."
+    },
+    {
+        img:"/images/home/icons/children.png", 
+        title:"Save the children",
+        paragraph:"Erfahren Sie mehr über unsere Projekte undFinanzen im Jahr 2021 in unserem."
+    },
+    {
+        img:"/images/home/icons/home.png", 
+        title:"PROVIDE HOMES",
+        paragraph:"Erfahren Sie mehr über unsere Projekte undFinanzen im Jahr 2021 in unserem."
+    },
+    {
+        img:"/images/home/icons/volunteer.png", 
+        title:"VOLUNTEER",
+        paragraph:"Erfahren Sie mehr über unsere Projekte undFinanzen im Jahr 2021 in unserem."
+    },
+    {
+        img:"/images/home/icons/food.png", 
+        title:"GIVE FOOD",
+        paragraph:"Erfahren Sie mehr über unsere Projekte undFinanzen im Jahr 2021 in unserem."
+    },
+    {
+        img:"/images/home/icons/water.png", 
+        title:"BRING CLEAN WATER",
+        paragraph:"Erfahren Sie mehr über unsere Projekte undFinanzen im Jahr 2021 in unserem."
+    },
+]
+
 function Icon ({img, title, paragraph}:any){
     return(
         <div className='grid grid-cols-[auto,1fr] items-end gap-3'>
-            <div className='p-4 h-[70px] w-[70px] xl_up:h-[140px] xl_up:w-[140px] xl_up:p-6 2xl_up:h-[140px] 2xl_up:w-[140px] 2xl_up:p-8 rounded-full bg-[#E8F1FF]'>
-                <img className='w-full h-full' src={img}></img>
+            <div className='p-5 h-[100px] w-[100px] xl_up:h-[140px] xl_up:w-[140px] xl_up:p-9 2xl_up:h-[140px] 2xl_up:w-[140px] 2xl_up:p-8 rounded-full bg-[#E8F1FF]'>
+                <img className='w-full h-full object-contain' src={img}></img>
             </div>
             <div className='grid gap-1'>
                 <h6 className='font-semibold text-[#363636] tracking-[-0.04em] text-lg xl_up:text-2xl'>{title}</h6>
@@ -42,19 +76,15 @@ function IconSupport({header, paragraph, linkText, href}:any){
 export default function Support() {
   return (
     <section className={ "  " + montserrat}>
-        <div className='flex w-full justify-end mb-8'>
+        <div className='flex w-full justify-end mb-8 '>
             <h1 className='text-2xl xl_up:text-5xl font-bold py-3 px-1 xl_up:py-5 xl_up:px-8 bg-[#10169F] text-white'>HOW YOU CAN SUPPORT US</h1>
         </div>
       
-        <div className='grid px-3 xl_up:px-14 gap-7 xl_up:gap-20'>
+        <div className='grid px-5 xl_up:px-10 gap-14 xl_up:gap-20'>
             <div className='grid xl_up:grid-cols-2  gap-5 xl_up:gap-10'>
                 <div className='grid gap-5 xl_up:gap-14'>
                    {
-                    Array(3).fill({
-                        img:"/images/home/icons/book.png", 
-                        title:"BUILD SCHOOLS",
-                        paragraph:"Erfahren Sie mehr über unsere Projekte undFinanzen im Jahr 2021 in unserem."
-                    }).map((icon, key)=>{return(
+                   data.slice(0,3).map((icon, key)=>{return(
                         <Icon key={key} img={icon.img} title={icon.title} paragraph={icon.paragraph}  />
                     )})
                    }
@@ -69,11 +99,7 @@ export default function Support() {
             <div className='grid xl_up:grid-cols-2 gap-5 xl_up:gap-10   '>
                 <div className='grid gap-5 xl_up:gap-14 xl_up:order-2'>
                    {
-                    Array(3).fill({
-                        img:"/images/home/icons/book.png", 
-                        title:"BUILD SCHOOLS",
-                        paragraph:"Erfahren Sie mehr über unsere Projekte undFinanzen im Jahr 2021 in unserem."
-                    }).map((icon, key)=>{return(
+                    data.slice(3,6).map((icon, key)=>{return(
                         <Icon key={key} img={icon.img} title={icon.title} paragraph={icon.paragraph}  />
                     )})
                    }

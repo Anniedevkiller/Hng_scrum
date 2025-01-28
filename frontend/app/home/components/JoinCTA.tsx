@@ -14,13 +14,13 @@ const roboto = roboto_init.className;
 
 export default function JoinCTA() {
   return (
-    <section className={'relative text-white ' + roboto} >
-        <div className='relative z-10 gradient-home py-14 px-3 grid gap-y-10 xl_up:grid-cols-2 xl_up:px-10'>
+    <section className={'relative text-white my-10 ' + roboto} >
+        <div className='relative z-10 gradient-home py-14 px-5 grid gap-y-10 xl_up:grid-cols-2 xl_up:px-10 md_up:px-7'>
             <div className='relative'>
                 <div className='absolute z-20 left-0 top-[25%] w-full grid gap-2 justify-center'>
-                    <h1 className='text-3xl xl_up:text-5xl 2xl_up:text-6xl font-bold tracking-[-0.013em '>BECOME A PART OF MKE </h1>
-                    <p className='text-lg xl_up:text-2xl 2xl_up:text-3xl tracking-[-0.013em] '>Come work with us to bring change to Nigeria and Africa at large </p>
-                    <button className='bg-[#830703] w-[140px] h-[45px] xl_up:w-[220px] xl_up:h-[70px] rounded-lg  inline-flex justify-center items-center text-base xl_up:text-xl '>Join us</button>
+                    <h1 className={'text-3xl md_up:text-4xl xl_up:text-5xl 2xl_up:text-6xl font-bold tracking-[-0.013em] ' + roboto}>BECOME A PART OF MKE </h1>
+                    <p className='text-lg md_up:text-xl xl_up:text-2xl 2xl_up:text-3xl tracking-[-0.013em] mb-3 '>Come work with us to bring change to Nigeria and Africa at large </p>
+                    <button className='bg-[#830703] w-[140px] h-[45px] xl_up:w-[220px] xl_up:h-[70px] rounded-lg  inline-flex justify-center items-center text-base md_up:text-lg xl_up:text-xl 2xl_up:text-2xl '>Join us</button>
                 </div>
                 <div className='relative w-[80%] mx-auto flex justify-center'>
                     <img src='images/home/africa.png'></img>
