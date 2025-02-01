@@ -38,7 +38,7 @@ export default function Page1() {
         <div className="mt-7 ">
           <div className="grid grid-cols-2 items-center gap-5 ">
             <div>
-              <img src="images/donate-now/donate.png"></img>
+              <img alt="donate" src="images/donate-now/donate.png"></img>
             </div>
             <div>
               <p>Your generous monthly donation can provide wheelchair which is essential for disable children and adults. Your donation can save generation.</p>

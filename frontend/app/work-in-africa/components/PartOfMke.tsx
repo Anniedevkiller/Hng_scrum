@@ -5,12 +5,12 @@ export default function PartOfMke() {
   return (
     <div className='py-10 bg-[rgba(232,241,255,0.27)] border-[3px] border-[rgba(0,0,0,0.3)] rounded-3xl '>
         <div className='text-center px-5'>
-            <Header>Become a Part of MKE</Header>
+            <Header className={""}>Become a Part of MKE</Header>
             <p className='text-[rgba(0,0,0,0.7)] 2xl_up:text-4xl xl_up:text-3xl text-xl font-medium 2xl_up:leading-[48px] xl_up:leading-[35px] leading-[25px]'>Create a brighter future for children in Africa.</p>
         </div>
         <div className='mt-10 grid gap-y-10 xl_up:grid-cols-2 xl_up:px-20'>
             <div className='w-full'>
-                <img className='object-cover w-full max-h-[600px] xl_up:max-h-[100%] xl_up:h-[100%] ' src='images/work-in-africa/becomePart.png'></img>
+                <img alt='become part of us' className='object-cover w-full max-h-[600px] xl_up:max-h-[100%] xl_up:h-[100%] ' src='images/work-in-africa/becomePart.png'></img>
             </div>
             <div className='grid px-5 gap-y-3'>
                 <div className='grid gap-y-3 md_up:grid-cols-2 gap-x-5'>

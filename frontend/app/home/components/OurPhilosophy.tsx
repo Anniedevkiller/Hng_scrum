@@ -27,7 +27,7 @@ export default function OurPhilosophy() {
             </div>
         </div>
         <div className='absolute z-0 top-0 h-full w-full'>
-            <img className='w-full h-full object-cover' src='/images/home/philosophy.png'></img>
+            <img alt='philosophy' className='w-full h-full object-cover' src='/images/home/philosophy.png'></img>
         </div>
     </section>
   )

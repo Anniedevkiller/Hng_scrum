@@ -54,7 +54,7 @@ function Icon ({img, title, paragraph}:any){
     return(
         <div className='grid grid-cols-[auto,1fr] items-end gap-3'>
             <div className='p-5 h-[100px] w-[100px] xl_up:h-[140px] xl_up:w-[140px] xl_up:p-9 2xl_up:h-[140px] 2xl_up:w-[140px] 2xl_up:p-8 rounded-full bg-[#E8F1FF]'>
-                <img className='w-full h-full object-contain' src={img}></img>
+                <img alt='support' className='w-full h-full object-contain' src={img}></img>
             </div>
             <div className='grid gap-1'>
                 <h6 className='font-semibold text-[#363636] tracking-[-0.04em] text-lg xl_up:text-2xl'>{title}</h6>

@@ -7,7 +7,7 @@ export default function Main() {
             <PaymentCard/>
         </div>
         <div className="absolute h-full w-full left-0 top-0 z-0">
-            <img className="w-full h-full object-cover" src="images/donate-now/bg.png"></img>
+            <img className="w-full h-full object-cover" alt="children" src="images/donate-now/bg.png"></img>
         </div>
     </div>
   )

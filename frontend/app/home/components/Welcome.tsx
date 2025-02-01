@@ -18,7 +18,7 @@ export default function Welcome() {
                 <p className={"text-xl md_up:text-2xl xl_up:text-3xl 2xl_up:text-4xl font-normal xl_up:font-normal " + montserrat}>where we are dedicated to making a meaningful difference through the Street Child Project. Our goal is to give 1,000 street children each year the opportunity to build a brighter future by providing access to education, covering their school fees, and offering essential skills training. Together, we can create a lasting impact and bring hope to those who need it most</p>
             </div>
             <div className='xl_up:w-[50%] xl_up:max-w-[846px]'>
-                <img className='h-[360px] w-full xl_up:h-[350px] 2xl_up:h-[400px] xl_up:max-w-[846px] object-cover' src='images/home/welcome.png'></img>
+                <img alt='welcome' className='h-[360px] w-full xl_up:h-[350px] 2xl_up:h-[400px] xl_up:max-w-[846px] object-cover' src='images/home/welcome.png'></img>
             </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ export default function PageHero() {
   return (
     <section className="relative  w-full overflow-hidden">
         
-        <img className='absolute h-full w-full object-cover z-0 top-0 left-0' src='images/home/herosection.png'></img>
+        <img alt='herosection' className='absolute h-full w-full object-cover z-0 top-0 left-0' src='images/home/herosection.png'></img>
         
         <div className='px-5 sm_up:px-[10%] grid pt-[160px] pb-[70px] xl_up:pt-[240px] z-10 h-full relative bg-[linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0.5))]'>
             <div className='md_up:w-[70%] xl_up:w-[60%] 2xl_up:w-[50%]'>

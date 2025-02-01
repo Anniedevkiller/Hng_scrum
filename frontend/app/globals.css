@@ -84,6 +84,7 @@ body {
   background-image: url("../public/images/work-in-africa/volunteer.png");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 425px;
 }
 
 /* @media (prefers-color-scheme: dark) {} */

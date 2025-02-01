@@ -23,16 +23,16 @@ export default function JoinCTA() {
                     <button className='bg-[#830703] w-[140px] h-[45px] xl_up:w-[220px] xl_up:h-[70px] rounded-lg  inline-flex justify-center items-center text-base md_up:text-lg xl_up:text-xl 2xl_up:text-2xl '>Join us</button>
                 </div>
                 <div className='relative w-[80%] mx-auto flex justify-center'>
-                    <img src='images/home/africa.png'></img>
+                    <img alt='africa' src='images/home/africa.png'></img>
                 </div>
             </div>
             <div className='w-[80%] mx-auto flex justify-center xl_up:justify-end xl_up:mr-0'>
-                <img src='images/home/hands.png' className='object-contain'></img>
+                <img alt='hands' src='images/home/hands.png' className='object-contain'></img>
             </div>
 
         </div>
         <div className='absolute z-0 top-0 h-full w-full'>
-            <img className='w-full h-full object-cover' src='/images/home/philosophy.png'></img>
+            <img alt='philosophy' className='w-full h-full object-cover' src='/images/home/philosophy.png'></img>
         </div>
     </section>
   )

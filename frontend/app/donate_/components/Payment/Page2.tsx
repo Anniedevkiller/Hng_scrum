@@ -3,7 +3,7 @@ export default function Page2() {
 
   return (
     <div className="w-full overflow-auto">
-        <h5 className=' font-medium text-lg xl xl_up:text-2xl 2xl_up:text-3xl'>YOU'RE GIVING A <span className="text-[#0609CD]">MONTHLY</span> DONATION OF <span className="text-[#0609CD]">$12,000.00</span></h5>
+        <h5 className=' font-medium text-lg xl xl_up:text-2xl 2xl_up:text-3xl'>YOU&apos;RE GIVING A <span className="text-[#0609CD]">MONTHLY</span> DONATION OF <span className="text-[#0609CD]">$12,000.00</span></h5>
         <form>
           <div className="mt-6 grid xl_up:grid-cols-2 gap-x-5 gap-y-5 overflow-auto w-full">
             <div className="grid text-left gap-1 ">

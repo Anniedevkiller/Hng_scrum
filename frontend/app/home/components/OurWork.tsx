@@ -19,7 +19,7 @@ function Card ({img, title, paragraph}:any){
   return(
     <div className='rounded-[12px] p-[22px_26px]  bg-[rgba(232,241,255,0.2)] grid gap-5 max-w-[380px] xl_up:w-[30%] xl_up:max-w-[534px] '>
       <div>
-        <img className='w-full' src={img}></img>
+        <img alt='work card' className='w-full' src={img}></img>
       </div>
       <div className='grid gap-2'>
         <h6 className={ roboto + " 2xl:font-bold 2xl_up:font-bold text-lg md_up:text-xl xl_up:text-2xl 2xl_up:text-3xl tracking-[-0.013em] leading-[22px] text-[#333333] "} >{title}</h6>
