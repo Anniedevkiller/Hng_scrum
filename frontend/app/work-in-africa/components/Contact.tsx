@@ -6,7 +6,7 @@ export default function Contact() {
     <div className='p-[5vw] py-14 xl_up:py-20 bg-[#0B175B] mt-14 xl_up:mt-24 '>
         <div className='text-white text-center mb-5 xl_up:mb-14'>
             <p className='2xl_up:text-3xl xl_up:text-2xl text-lg text-[#ffffff_70%] '>Contact Us</p>
-            <Header className='mt-0'>Let's Get in Touch</Header>
+            <Header className='mt-0'>Let&apos;s Get in Touch</Header>
         </div>
         <div className='grid gap-5 xl_up:flex xl_up:h-fit xl_up:gap-5'>
             <div className='xl_up:w-[40%] h-fit'>
