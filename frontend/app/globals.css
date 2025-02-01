@@ -80,4 +80,10 @@ body {
     );
 }
 
+.volunteer{
+  background-image: url("../public/images/work-in-africa/volunteer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* @media (prefers-color-scheme: dark) {} */
