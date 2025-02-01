@@ -14,13 +14,13 @@ const DonateCompany = () => {
           {`Join forces with us through your corporate donation, and together let's enhance the lives of children`}
         </Text>
 
-        <button className="btn btn-error w-fit">Donate</button>
+        <button className="btn bg-[#0B175B] text-white  w-fit font-bold px-7 py-4 h-fit">DONATE NOW</button>
       </div>
 
       <LazyImage
         className="rounded-full overflow-hidden"
         style={{ height: "clamp(260px, 40vw, 450px)", width: "clamp(260px, 40vw, 450px)" }}
-        src="/images/donate/Donate-as-a-company.webp"
+        src="/images/donate/donate-company.png"
       />
     </PageLayer>
   );

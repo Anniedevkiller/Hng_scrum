@@ -10,11 +10,9 @@ const Page = () => {
   return (
     <main className="flex flex-col gap-10">
       <Hero />
-      <Intro />
       <DonationImpact />
       <DonateCompany />
       <OngoingProjects />
-      <ContactInfo className="my-10" />
       <Waitlist />
     </main>
   );
