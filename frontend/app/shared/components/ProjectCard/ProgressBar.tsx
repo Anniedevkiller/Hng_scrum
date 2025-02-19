@@ -11,11 +11,11 @@ const ProgressBar = ({ raised, expected }: { raised: number; expected: number })
       total={expected}
       Label={({ percentage }) => <ProgressLabel percentage={percentage} />}
     >
-      <div className="absolute top-3 -left-2 text-xl sm:text-base font-bold font-title black-1">
+      <div className="absolute top-3 -left-2 text-xl sm:text-base font-bold   black-1">
         Raised ${thousandsSeperator(raised)}
       </div>
 
-      <div className="flex items-center gap-1 absolute top-3 -right-6 sm:right-0 text-xl sm:text-base font-bold font-title black-1">
+      <div className="flex items-center gap-1 absolute top-3 -right-6 sm:right-0 text-xl sm:text-base font-bold   black-1">
         <AuctionGoal className="text-primary" /> ${thousandsSeperator(expected)}
       </div>
     </Progress>
@@ -46,7 +46,7 @@ const ProgressLabel = ({ percentage }: { percentage: number }) => {
           strokeLinejoin="round"
         />
       </svg>
-      <span className="-mt-1 text-xs font-title font-bold">{percentage}%</span>
+      <span className="-mt-1 text-xs   font-bold">{percentage}%</span>
     </div>
   );
 };

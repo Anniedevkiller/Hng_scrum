@@ -23,13 +23,22 @@ const DonationComponent: React.FC = () => {
       {/* Suggested Amount Buttons */}
       <div className="grid grid-cols-4 gap-2 w-full">
         {suggestedAmounts.map((value, index) => (
-          <button
-            key={index}
-            onClick={() => handleSuggestedAmountClick(value)}
-            className=" py-2 text-xs font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200 focus:ring focus:ring-blue-300"
+          // <a href="/donate_"><button
+          //   key={index}
+          //   onClick={() => handleSuggestedAmountClick(value)}
+          //   className=" py-2 text-xs font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200 focus:ring focus:ring-blue-300"
+          // >
+          //   ${value.toLocaleString()}
+          // </button>
+          // </a>
+          <a href="/donate_"><button
+          key={index}
+          
+          className=" py-2 text-xs font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200 focus:ring focus:ring-blue-300"
           >
-            ${value.toLocaleString()}
-          </button>
+          ${value.toLocaleString()}
+        </button>
+        </a>
         ))}
       </div>
 

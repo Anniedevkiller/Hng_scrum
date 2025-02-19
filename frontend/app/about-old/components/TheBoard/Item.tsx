@@ -1,5 +1,5 @@
 import LazyImage from "@/shared/components/LazyImage";
-import ContactInfo, { ContactInfoProps } from "@/about/shared/components/ContactInfo";
+import ContactInfo, { ContactInfoProps } from "@/about-old/shared/components/ContactInfo";
 import Text from "@/shared/components/Text";
 
 export type ItemProps = ContactInfoProps & { pic: string; bio: string };

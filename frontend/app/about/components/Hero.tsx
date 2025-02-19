@@ -1,17 +1,28 @@
-import LazyImage from "@/shared/components/LazyImage";
-import PageLayer from "@/shared/components/PageLayer";
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <PageLayer className="!p-0 relative flex justify-center items-center min-w-full" style={{ height: "clamp(270px, 50vw, 768px)" }}>
-      <LazyImage className="w-full h-full" src="/images/monika-school.webp" />
-
-      <div className="absolute left-20 text-white md:left-5 grid gap-4 text-6xl xl:text-4xl sm:!text-lg font-title font-bold">
-        <div className="text-black bg-white rounded p-6 md:p-2 w-fit sm:!p-1">About us at Monika</div>
-        <div className="text-primary-600 bg-white rounded p-6 md:p-2 w-fit ml-32 md:ml-5 sm:!p-1">Kindergarten Förderverein.</div>
-      </div>
-    </PageLayer>
-  );
-};
-
-export default Hero;
+    <div className="mb-44 2xl_up:h-[700px] xl_up:h-[100vh] md_up:h-[500px] h-[400px] relative">
+        <div className="absolute blur-sm   z-0 h-full w-full  rounded-[81px]">
+            <img className="h-full w-full object-cover rounded-[81px]" alt="children in background" 
+                src="/images/about/about-hero.png"></img>
+        </div>
+        <div className="h-full z-10 relative text-center grid justify-center items-center">
+            <p className="2xl_up:text-7xl xl_up:text-6xl md_up:text-5xl text-4xl
+              2xl_up:text-[75px] xl_up:text-[65px] md_up:text-[55px] text-[45px]
+              text-[#FFFCFC] font-bold tracking-tight px-5 w-[80%] mx-auto
+              " 
+            >
+                About Monika Kindergarten  Förderverein 
+            </p>
+        </div>
+        {/* <div className="relative h-10 z-10">
+            <div className="flex gap-1 absolute bottom-[0px] z-10 w-full items-end justify-center">
+                <img className="h-fit w-[22%]" src="/images/about/hero-1.png"></img>
+                <img className="h-fit w-[22%]" src="/images/about/hero-2.png"></img>
+                <img className="h-fit w-[22%]" src="/images/about/hero-3.png"></img>
+                <img  className="h-fit w-[22%]" src="/images/about/hero-4.jpg"></img>
+            </div>
+        </div> */}
+    </div>
+  )
+}

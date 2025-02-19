@@ -9,7 +9,7 @@ const Item = ({ title, list }: Props) => {
   const time = Date.now();
 
   return (
-    <li className="text-lg font-bold font-title">
+    <li className="text-lg font-bold  ">
       <p className="mb-2">{title}</p>
 
       <ol className="ml-4 list-disc grid gap-2 text-base font-normal font-text">

@@ -71,6 +71,12 @@ const config: Config = {
         "secondary-1000": "#031625",
 
         "neutral-01": "#F3F4F8",
+
+        "blue-900": "#10169F",
+        "blue-400":"#5676FF",
+        "blue-300":"#85A8FF",
+        "blue-100": "#D5E4FF",
+        "black": "#0F0E0E"
       },
       screens: {
         // Max Breakpoints
@@ -109,9 +115,15 @@ const config: Config = {
 
       },
       fontFamily: {
-        title: ["var(--font-oswald)"],
-        text: ["var(--font-lato)"],
+        mont: ["var(--font-montserrat)"],
+        lato: ["var(--font-lato)"],
         inter: ["var(--font-inter)"],
+      },
+      padding:{
+        aboutSm:"30px",
+        aboutMd: "60px",
+        aboutBig:"90px",
+        aboutLarge:"180px"
       },
     },
   },
